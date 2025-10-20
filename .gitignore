@@ -1,0 +1,64 @@
+# Maven
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+logs/
+
+# Package files produced by the build
+*.jar
+*.war
+*.ear
+
+# Generated sources
+/generated-sources/
+/generated-test-sources/
+
+# IDEs and editors
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+/.vscode/
+
+# Intellij specific output
+/out/
+
+# VS Code workspace storage
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Environment and secret files (adjust names you actually use)
+.env
+*.env
+secrets.properties
+application-*.local.properties
+application-*.secret.properties
+
+# Maven local repository (should not be in the repo)
+.m2/
+
+# Ignore build wrappers' generated caches (but keep mvnw and wrapper jar committed)
+.idea/
