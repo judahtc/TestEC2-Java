@@ -12,7 +12,7 @@ sudo docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPO_NAME:$T
 
 echo "🎉 Done! Image pulled successfully from ECR."
 
-PORT=8000
+PORT=8080
 
 # Find the container ID using the port
 CONTAINER_ID=$(sudo docker ps -q --filter "publish=${PORT}")
@@ -24,4 +24,4 @@ if [ -n "$CONTAINER_ID" ]; then
     sudo docker rm $CONTAINER_ID
 fi
 
-sudo docker run -d -p 8000:8000 419772637660.dkr.ecr.eu-west-1.amazonaws.com/atapi
+sudo docker run -d -p 8080:8080 419772637660.dkr.ecr.eu-west-1.amazonaws.com/test-ec2-java
