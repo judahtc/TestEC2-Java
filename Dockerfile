@@ -1,7 +1,11 @@
 # multi-stage Dockerfile for a Spring Boot application
 
 # Build stage: build the executable JAR using Maven
-FROM maven:3.9.4-eclipse-temurin-21 AS build
+FROM public.ecr.aws/amazoncorretto/amazoncorretto:21 AS build
+
+# Install Maven
+RUN yum update -y && yum install -y maven
+
 WORKDIR /workspace
 
 # Copy source and build
@@ -10,7 +14,7 @@ COPY src ./src
 RUN mvn -B -DskipTests package
 
 # Runtime stage: run the built jar with a lightweight JRE
-FROM eclipse-temurin:21-jre
+FROM public.ecr.aws/amazoncorretto/amazoncorretto:21
 WORKDIR /app
 
 # Copy the jar produced in the build stage
