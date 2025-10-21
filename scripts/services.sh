@@ -1,6 +1,6 @@
 AWS_REGION="eu-west-1"
 AWS_ACCOUNT_ID="419772637660"
-REPO_NAME="atapi"
+REPO_NAME="test-ec2-java"
 TAG="latest"
 
 echo "🔑 Logging in to Amazon ECR..."
