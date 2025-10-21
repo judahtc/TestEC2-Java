@@ -3,8 +3,11 @@
 # Build stage: build the executable JAR using Maven
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:21 AS build
 
-# Install Maven
-RUN yum update -y && yum install -y maven
+# Install Maven 3.9.4
+RUN yum update -y && yum install -y wget tar && \
+    wget https://archive.apache.org/dist/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz && \
+    tar -xzf apache-maven-3.9.4-bin.tar.gz -C /opt && \
+    ln -s /opt/apache-maven-3.9.4/bin/mvn /usr/local/bin/mvn
 
 WORKDIR /workspace
 
